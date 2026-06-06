@@ -5,5 +5,5 @@ export const createUrlSchema = z.object({
 }).passthrough();
 
 export const getUrlParamsSchema = z.object({
-  id: z.coerce.number().int().positive(),
+  id: z.string().regex(/^[a-zA-Z0-9]+$/, "id must be a base62 string"),
 }).passthrough();
